@@ -1,0 +1,131 @@
+﻿{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "Image",
+          "url": "data:image/png;base64,${SamuelRobotUrl}",
+          "height": "140px",
+          "horizontalAlignment": "Center"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Hola, soy Samuel, gusto en conocerte",
+                  "wrap": true,
+                  "fontType": "Monospace",
+                  "size": "Medium",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Center",
+                  "color": "Dark"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Seré tu compañero y guía en este sendero de aprendizaje para que puedas dominar el lenguaje de programación C. Cuenta conmigo para cualquier dificultad que tengas. Sin más, ¡Comencemos!\n",
+                  "wrap": true
+                },
+                {
+                  "type": "ColumnSet",
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "width": 50,
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "actions": [
+                            {
+                              "type": "Action.Submit",
+                              "title": "Temario"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Column",
+                      "width": 50,
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "actions": [
+                            {
+                              "type": "Action.Submit",
+                              "title": "Ejercicios"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Column",
+                      "width": 50,
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "actions": [
+                            {
+                              "type": "Action.Submit",
+                              "title": "Apoyo"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Información recopilada de:",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "[learn-c.org](https://www.learn-c.org/)",
+                  "wrap": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Ayuda",
+                  "wrap": true,
+                  "horizontalAlignment": "Right"
+                }
+              ],
+              "backgroundImage": {
+                "verticalAlignment": "Bottom"
+              },
+              "verticalContentAlignment": "Bottom"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
