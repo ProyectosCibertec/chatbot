@@ -1,0 +1,142 @@
+﻿{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "Image",
+          "url": "data:image/png;base64,${SamuelRobotUrl}",
+          "height": "140px",
+          "horizontalAlignment": "Center"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Hola, soy Samuel, gusto en conocerte",
+                  "wrap": true,
+                  "fontType": "Monospace",
+                  "size": "Medium",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Center",
+                  "color": "Dark"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Seré tu compañero y guía en este sendero de aprendizaje para que puedas dominar el lenguaje de programación C. Sin más, ¡Comencemos!\n",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Si necesitas un plan de estudio para aprender C, haz click en **\"Temario\"**. Si necesitas poner a prueba tu conocimiento en C y practicar, haz click en **\"Ejercicios\"**. Por último, si necesitas que te apoye en un problema o duda, haz click en **\"Apoyo\"**",
+                  "wrap": true
+                },
+                {
+                  "type": "ColumnSet",
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "width": 50,
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "actions": [
+                            {
+                              "type": "Action.Submit",
+                              "title": "Temario",
+                              "data": "Temario",
+                              "style": "positive"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Column",
+                      "width": 50,
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "actions": [
+                            {
+                              "type": "Action.Submit",
+                              "title": "Ejercicios",
+                              "data": "Ejercicios",
+                              "style": "positive"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Column",
+                      "width": 50,
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "actions": [
+                            {
+                              "type": "Action.Submit",
+                              "title": "Apoyo",
+                              "data": "Apoyo",
+                              "style": "positive"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Información recopilada de:",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "[learn-c.org](https://www.learn-c.org/)",
+                  "wrap": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Ayuda",
+                  "wrap": true,
+                  "horizontalAlignment": "Right"
+                }
+              ],
+              "backgroundImage": {
+                "verticalAlignment": "Bottom"
+              },
+              "verticalContentAlignment": "Bottom"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
