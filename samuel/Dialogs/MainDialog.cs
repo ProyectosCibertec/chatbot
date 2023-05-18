@@ -34,18 +34,48 @@ namespace samuel.Dialogs
 
         private async Task<DialogTurnResult> InitialStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-
             _logger.LogInformation("MainDialog.ShowCardStepAsync");
+            var activity = stepContext.Context.Activity;
+            if (activity.Text.Equals("Temario"))
+            {
+                await stepContext.BeginDialogAsync(nameof(SyllabusDialog), null, cancellationToken);
+            } 
+            else if (activity.Text.Equals("Ejercicios"))
+            {
+                await stepContext.BeginDialogAsync(nameof(ExercisesDialog), null, cancellationToken);
+            }
+            else if (activity.Text.Equals("QnA"))
+            {
+                await stepContext.BeginDialogAsync(nameof(QnADialog), null, cancellationToken);
+            }
+            else
+            {
+                await SendMainMenuMessage(stepContext, cancellationToken);
+            }
 
-            // Cards are sent as Attachments in the Bot Framework.
-            // So we need to create a list of attachments for the reply activity.
-            
             return await stepContext.EndDialogAsync();
         }
 
         private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             return await stepContext.EndDialogAsync(null, cancellationToken);
+        }
+
+        private static async Task SendMainMenuMessage(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            var card = new HeroCard
+            {
+                Text = "¿Qué necesitas?",
+                Buttons = new List<CardAction>
+                {
+                    new CardAction(ActionTypes.ImBack, title: "Temario", value: "Temario"),
+                    new CardAction(ActionTypes.ImBack, title: "Ejercicios", value: "Ejercicios"),
+                    new CardAction(ActionTypes.ImBack, title: "QnA", value: "QnA"),
+                },
+            };
+            var reply = MessageFactory.Attachment(card.ToAttachment());
+            // Send the card(s) to the user as an attachment to the activity
+            await stepContext.Context.SendActivityAsync(reply, cancellationToken);
         }
     }
 }

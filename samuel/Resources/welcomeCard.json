@@ -31,7 +31,12 @@
                 },
                 {
                   "type": "TextBlock",
-                  "text": "Seré tu compañero y guía en este sendero de aprendizaje para que puedas dominar el lenguaje de programación C. Cuenta conmigo para cualquier dificultad que tengas. Sin más, ¡Comencemos!\n",
+                  "text": "Seré tu compañero y guía en este sendero de aprendizaje para que puedas dominar el lenguaje de programación C. Sin más, ¡Comencemos!\n",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Si necesitas un plan de estudio para aprender C, haz click en **\"Temario\"**. Si necesitas poner a prueba tu conocimiento en C y practicar, haz click en **\"Ejercicios\"**. Por último, si necesitas que te apoye en un problema o duda, haz click en **\"Apoyo\"**",
                   "wrap": true
                 },
                 {
@@ -46,7 +51,9 @@
                           "actions": [
                             {
                               "type": "Action.Submit",
-                              "title": "Temario"
+                              "title": "Temario",
+                              "data": "Temario",
+                              "style": "positive"
                             }
                           ]
                         }
@@ -61,7 +68,9 @@
                           "actions": [
                             {
                               "type": "Action.Submit",
-                              "title": "Ejercicios"
+                              "title": "Ejercicios",
+                              "data": "Ejercicios",
+                              "style": "positive"
                             }
                           ]
                         }
@@ -76,7 +85,9 @@
                           "actions": [
                             {
                               "type": "Action.Submit",
-                              "title": "Apoyo"
+                              "title": "Apoyo",
+                              "data": "Apoyo",
+                              "style": "positive"
                             }
                           ]
                         }

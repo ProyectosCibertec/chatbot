@@ -43,12 +43,8 @@ namespace samuel.Bots
         private static async Task SendIntroCardAsync(ITurnContext turnContext, CancellationToken cancellationToken)
         {
             var attachments = new List<Attachment>();
-
-            // Reply to the activity we received with an activity.
             var reply = MessageFactory.Attachment(attachments);
             reply.Attachments.Add(Cards.CreateWelcomeCard());
-
-            // Send the card(s) to the user as an attachment to the activity
             await turnContext.SendActivityAsync(reply, cancellationToken);
         }
     }
