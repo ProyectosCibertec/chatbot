@@ -36,7 +36,7 @@
                 },
                 {
                   "type": "TextBlock",
-                  "text": "Si necesitas un plan de estudio para aprender C, haz click en **\"Temario\"**. Si necesitas poner a prueba tu conocimiento en C y practicar, haz click en **\"Ejercicios\"**. Por último, si necesitas que te apoye en un problema o duda, haz click en **\"Apoyo\"**",
+                  "text": "Si necesitas un plan de estudio para aprender C, haz click en **\"Temario\"**. Si necesitas poner a prueba tu conocimiento en C y practicar, haz click en **\"Ejercicios\"**. Por último, si necesitas que te apoye en un problema o duda, haz click en **\"QnA\"**",
                   "wrap": true
                 },
                 {
@@ -85,8 +85,8 @@
                           "actions": [
                             {
                               "type": "Action.Submit",
-                              "title": "Apoyo",
-                              "data": "Apoyo",
+                              "title": "QnA",
+                              "data": "QnA",
                               "style": "positive"
                             }
                           ]
@@ -123,10 +123,14 @@
               "width": "stretch",
               "items": [
                 {
-                  "type": "TextBlock",
-                  "text": "Ayuda",
-                  "wrap": true,
-                  "horizontalAlignment": "Right"
+                  "type": "ActionSet",
+                  "actions": [
+                    {
+                      "type": "Action.Submit",
+                      "title": "Ayuda",
+                      "data": "Ayuda"
+                    }
+                  ]
                 }
               ],
               "backgroundImage": {

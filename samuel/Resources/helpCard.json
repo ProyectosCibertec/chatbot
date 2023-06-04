@@ -1,0 +1,82 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "50px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "A\\\nY\\\nU\\\nD\\\nA",
+                  "wrap": true,
+                  "height": "stretch",
+                  "horizontalAlignment": "Center",
+                  "weight": "Bolder",
+                  "size": "ExtraLarge",
+                  "fontType": "Default",
+                  "style": "default"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Temario",
+                  "wrap": true,
+                  "style": "heading",
+                  "fontType": "Default",
+                  "size": "Large",
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Te daré un conjunto de temas con los cuales podrás convertirte poco a poco en un programador profesional en C.",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Ejercicios",
+                  "wrap": true,
+                  "style": "heading",
+                  "fontType": "Default",
+                  "size": "Large",
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Son problemas ordenados por temas con los cuales podrás practicar. Recuerda, ¡La práctica hace al maestro!",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "QnA",
+                  "wrap": true,
+                  "style": "heading",
+                  "fontType": "Default",
+                  "size": "Large",
+                  "weight": "Bolder"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Sección libre en la cual podrás hacerme preguntas sobre el lenguaje C o también darme código para que lo analice y te dé recomendaciones.",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

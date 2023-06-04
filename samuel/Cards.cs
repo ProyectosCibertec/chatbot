@@ -32,5 +32,17 @@ namespace Microsoft.BotBuilderSamples
             };
             return welcomeCardAttachment;
         }
+
+        public static Attachment CreateHelpCard()
+        {
+            var paths = new[] { ".", "Resources", "helpCard.json" };
+            var adaptiveCardJson = File.ReadAllText(Path.Combine(paths));
+            var adaptiveCardAttachment = new Attachment()
+            {
+                ContentType = "application/vnd.microsoft.card.adaptive",
+                Content = JsonConvert.DeserializeObject(adaptiveCardJson),
+            };
+            return adaptiveCardAttachment;
+        }
     }
 }
