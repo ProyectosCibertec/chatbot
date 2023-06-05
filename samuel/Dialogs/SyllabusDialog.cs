@@ -2,24 +2,28 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Azure.Data.Tables;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Builder.Dialogs.Choices;
 using Microsoft.Bot.Schema;
-using Microsoft.BotBuilderSamples;
-using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.Extensions.Configuration;
+using samuel.Data;
 
 namespace samuel.Dialogs
 {
-    public class ExercisesDialog : ComponentDialog
+    public class SyllabusDialog : ComponentDialog
     {
+        private readonly IConfiguration _config;
+        TableServiceClient tableServiceClient;
 
-        public ExercisesDialog()
-            : base(nameof(ExercisesDialog))
+        public SyllabusDialog(IConfiguration config)
+            : base(nameof(SyllabusDialog))
         {
+            _config = config;
+            tableServiceClient = new TableServiceClient(_config["Storage:ConnectionString"]);
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 InitialStepAsync,
@@ -31,24 +35,28 @@ namespace samuel.Dialogs
 
         private async Task<DialogTurnResult> InitialStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            var promptOptions = new PromptOptions { Prompt = MessageFactory.Text("Please enter your name.") };
-            return await stepContext.PromptAsync(nameof(TextPrompt), promptOptions, cancellationToken);
+            TableClient tableClient = tableServiceClient.GetTableClient(
+                tableName: _config["Storage:Themes:TableName"]
+            );
+            List<Attachment> attachments = new List<Attachment>();
+            IEnumerable<Theme> themes = tableClient.Query<Theme>();
+            foreach (var theme in themes.ToList())
+            {
+                attachments.Add(
+                    new HeroCard(
+                        title: theme.Name,
+                        text: theme.Content.Substring(0, 140)
+                        )
+                    .ToAttachment()
+                );
+            }
+            var activity = MessageFactory.Carousel(attachments);
+            await stepContext.Context.SendActivityAsync(activity);
+            return await stepContext.ContinueDialogAsync(cancellationToken: cancellationToken);
         }
 
         private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            switch (((FoundChoice)stepContext.Result).Value)
-            {
-                case "Analiza mi código":
-                    await stepContext.Context.SendActivityAsync("sdf", cancellationToken: cancellationToken);
-                    break;
-                case "Tengo consultas":
-                    await stepContext.BeginDialogAsync(nameof(QnADialog), null, cancellationToken);
-                    break;
-                default:
-                    await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
-                    break;
-            }
             return await stepContext.ContinueDialogAsync(cancellationToken);
         }
     }

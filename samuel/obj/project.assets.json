@@ -90,6 +90,23 @@
           }
         }
       },
+      "Azure.Data.Tables/12.8.0": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.27.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.JsonPatch/3.1.1": {
         "type": "package",
         "dependencies": {
@@ -2635,6 +2652,22 @@
         "lib/netcoreapp2.1/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Data.Tables/12.8.0": {
+      "sha512": "jBNOUXoANEv66mIyR+rzC7toogo48pYciH4n5xsb8nHRz6lfjX9jwsOjC8sdR1Zl75Z6MZvaZjajqVwCt3JqVw==",
+      "type": "package",
+      "path": "azure.data.tables/12.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.data.tables.12.8.0.nupkg.sha512",
+        "azure.data.tables.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Data.Tables.dll",
+        "lib/netstandard2.0/Azure.Data.Tables.xml"
       ]
     },
     "Microsoft.AspNetCore.JsonPatch/3.1.1": {
@@ -7800,6 +7833,7 @@
     "net6.0": [
       "AdaptiveCards.Templating >= 1.4.0",
       "Azure.AI.OpenAI >= 1.0.0-beta.5",
+      "Azure.Data.Tables >= 12.8.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.1",
       "Microsoft.Bot.Builder.Dialogs >= 4.19.3",
       "Microsoft.Bot.Builder.Integration.AspNet.Core >= 4.18.1"
@@ -7851,6 +7885,10 @@
           "Azure.AI.OpenAI": {
             "target": "Package",
             "version": "[1.0.0-beta.5, )"
+          },
+          "Azure.Data.Tables": {
+            "target": "Package",
+            "version": "[12.8.0, )"
           },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
