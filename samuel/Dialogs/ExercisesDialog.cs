@@ -13,11 +13,11 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace samuel.Dialogs
 {
-    public class SyllabusDialog : ComponentDialog
+    public class ExercisesDialog : ComponentDialog
     {
 
-        public SyllabusDialog()
-            : base(nameof(SyllabusDialog))
+        public ExercisesDialog()
+            : base(nameof(ExercisesDialog))
         {
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {

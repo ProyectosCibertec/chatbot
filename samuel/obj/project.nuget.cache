@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7cP4JareA19RChqaBwq9zFlUtaOWg6sb0+j31tKiQiPDUIX7B6za7OxA457Uk6J9yS4oNwsbpGqqeld2XURQhw==",
+  "dgSpecHash": "fVlx99PXzNT5+O20hiWS9++UncICOiq2UM+60zrD106KZFE/4wS+lE89MYqy9mcoaOxVuCqshjLAo88zpVmkOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\i202016924\\programming\\CSharp\\chatbot-samuel\\samuel\\samuel.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\i202016924\\.nuget\\packages\\antlr4.runtime.standard\\4.8.0\\antlr4.runtime.standard.4.8.0.nupkg.sha512",
     "C:\\Users\\i202016924\\.nuget\\packages\\azure.ai.openai\\1.0.0-beta.5\\azure.ai.openai.1.0.0-beta.5.nupkg.sha512",
     "C:\\Users\\i202016924\\.nuget\\packages\\azure.core\\1.30.0\\azure.core.1.30.0.nupkg.sha512",
+    "C:\\Users\\i202016924\\.nuget\\packages\\azure.data.tables\\12.8.0\\azure.data.tables.12.8.0.nupkg.sha512",
     "C:\\Users\\i202016924\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.1\\microsoft.aspnetcore.jsonpatch.3.1.1.nupkg.sha512",
     "C:\\Users\\i202016924\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.1\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.1.nupkg.sha512",
     "C:\\Users\\i202016924\\.nuget\\packages\\microsoft.azure.services.appauthentication\\1.6.1\\microsoft.azure.services.appauthentication.1.6.1.nupkg.sha512",
