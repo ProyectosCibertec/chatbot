@@ -28,7 +28,7 @@ namespace samuel.Dialogs
 
             AddDialog(new ChoicePrompt(nameof(ChoicePrompt)));
             AddDialog(new SyllabusDialog(_config));
-            AddDialog(new ExercisesDialog());
+            AddDialog(new ExercisesDialog(_config));
             AddDialog(new QnADialog(_config));
             AddDialog(new HelpDialog());
 

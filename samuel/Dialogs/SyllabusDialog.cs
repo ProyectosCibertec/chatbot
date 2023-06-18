@@ -24,6 +24,7 @@ namespace samuel.Dialogs
         {
             _config = config;
             tableServiceClient = new TableServiceClient(_config["Storage:ConnectionString"]);
+
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 InitialStepAsync,
@@ -45,14 +46,19 @@ namespace samuel.Dialogs
                 attachments.Add(
                     new HeroCard(
                         title: theme.Name,
-                        text: theme.Content.Substring(0, 140)
-                        )
+                        text: theme.Content,
+                        tap: new CardAction()
+                        {
+                            Type = ActionTypes.MessageBack,
+                            Value = theme.Id
+                        }
+                    )
                     .ToAttachment()
                 );
             }
             var activity = MessageFactory.Carousel(attachments);
             await stepContext.Context.SendActivityAsync(activity);
-            return await stepContext.ContinueDialogAsync(cancellationToken: cancellationToken);
+            return await stepContext.NextAsync(cancellationToken: cancellationToken);
         }
 
         private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
